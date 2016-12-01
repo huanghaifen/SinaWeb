@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>要闻</title>
+</head>
+<body>
+<form action="/search/" method="get"> <!-- 将http这修改为后台地址  method get/post 与后台的要一致 -->
+    <input type="text" name='searchStr'/> <!-- 这里就收参数name要与后台一致 -->
+
+    <input type="submit" value="搜索"/>
+    <ul>
+
+        {% for item in items %}
+            <li>
+                <a href="{{ item.url }}">{{ item.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</form>
+</body>
+</html>
